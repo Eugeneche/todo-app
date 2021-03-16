@@ -1,4 +1,9 @@
 export type TodoItem = {
-    id: string, 
-    title: string
+    id: string | null, 
+    title: string | null
+  }
+
+export interface State {
+    todosList: Array<TodoItem>;
+    currentTodo: TodoItem;
   }

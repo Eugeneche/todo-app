@@ -1,5 +1,8 @@
 import React from 'react';
-import { TodoItem } from'../types'
+import { State, TodoItem } from'../types'
 
 
-export const StoreContext = React.createContext<Array<TodoItem>>([]);
+export const StoreContext = React.createContext<State>({
+    todosList: [],
+    currentTodo: {} as TodoItem
+});

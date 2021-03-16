@@ -1,17 +1,17 @@
-import React from 'react';
+import { useContext } from 'react';
 import { StoreContext } from '../../context/StoreContext';
-import { Todo } from './Todo';
 import styles from './Todo.module.css';
 
-export const TodoDetail = (props: any) => {
+export const TodoDetail = () => {
 
-    return <StoreContext.Consumer>
-        {
-            (state) => (
-                <div className={styles.todoWrap}>
-                    <Todo />
-                </div>
-            )
-        }       
-    </StoreContext.Consumer>
+    const state = useContext(StoreContext);
+
+    return (
+        <div className={styles.todoWrap}>
+            <div className={styles.todoItem}>
+                <div className={styles.todoText}>Todo ID: {state.currentTodo.id}</div>
+                <div className={styles.todoText}>Todo sublect: {state.currentTodo.title}</div>
+            </div>
+        </div>
+    )
 }
